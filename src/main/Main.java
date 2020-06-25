@@ -1,5 +1,8 @@
 package main;
 
+import commands.ChangeWorld;
+import org.bukkit.Bukkit;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -8,6 +11,10 @@ public class Main extends JavaPlugin {
     public void onEnable() {
 
         print("Plugin started");
+
+        getCommand("changeworld").setExecutor(new ChangeWorld());
+
+        WorldCreator.name("world_gameworld").copy(Bukkit.getWorld("world"));
 
     }
 
