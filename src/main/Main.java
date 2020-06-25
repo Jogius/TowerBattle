@@ -14,9 +14,10 @@ public class Main extends JavaPlugin {
 
         getCommand("changeworld").setExecutor(new ChangeWorld());
 
-        WorldCreator.name("world_gameworld").copy(Bukkit.getWorld("world"));
+        WorldCreator.name("world_gameworld").copy(Bukkit.getWorld("world")).createWorld();
 
     }
+
 
     public static void print(String text) {
         System.out.println("[TowerBattle] " + text);
