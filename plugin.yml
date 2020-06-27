@@ -1,3 +1,6 @@
 name: TowerBattle
 version: 0.1
 main: main.Main
+commands:
+  changeworld:
+    description: Teleports the executing player to <world>
