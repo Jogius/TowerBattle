@@ -1,6 +1,5 @@
 package commands;
 
-import main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,8 +16,6 @@ public class ChangeWorld implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("towerbattle.changeworld")) {
                 if (args.length == 1) {
-                    Bukkit.broadcastMessage(p.getWorld().getName());
-                    Main.print(p.getWorld().getName());
                     p.teleport(Bukkit.getWorld(args[0]).getSpawnLocation());
                 } else {
                     p.sendMessage("§cUse /changeworld <world>");
