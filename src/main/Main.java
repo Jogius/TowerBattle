@@ -9,7 +9,7 @@ import utils.CustomChunkgenerator;
 
 public class Main extends JavaPlugin {
 
-    public static World w = Bukkit.getWorld("world");
+    public static World w;
 
     @Override
     public void onEnable() {
@@ -17,6 +17,8 @@ public class Main extends JavaPlugin {
         print("Plugin started");
 
         getCommand("changeworld").setExecutor(new ChangeWorld());
+
+        w = Bukkit.getWorld("world");
 
         WorldCreator creator = new WorldCreator("world_gameworld");
         creator.generator(new CustomChunkgenerator());

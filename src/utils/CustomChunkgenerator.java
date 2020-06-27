@@ -18,9 +18,15 @@ public class CustomChunkgenerator extends ChunkGenerator {
                 int coordinateX = chunkx * 16 + x;
                 int coordinateZ = chunkz * 16 + z;
                 int currentheight = Main.w.getHighestBlockYAt(coordinateX, coordinateZ);
-                for(int y = currentheight; y > 0; y--) {
-                    chunk.setBlock(x,y,z,Main.w.getBlockAt(x,y,z).getType());
 
+                for(int y = currentheight; y > 0; y--) {
+                    if (Main.w != null) {
+                        if (Main.w.getBlockAt(coordinateX, y, coordinateZ) != null) {
+                            if (Main.w.getBlockAt(coordinateX, y, coordinateZ).getType() != null){
+                                chunk.setBlock(x,y,z,Main.w.getBlockAt(coordinateX,y,coordinateZ).getType());
+                            }
+                        }
+                    }
                 }
             }
         }
